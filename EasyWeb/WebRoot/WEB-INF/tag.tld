@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+	version="2.1">
+
+	<description>My tag</description>
+	<display-name>Test</display-name>
+	<tlib-version>1.0</tlib-version>
+	<short-name>t</short-name>
+	<uri>http://www.sxt.com/myTag</uri>
+
+	<tag>
+		<description>Test</description>
+		<name>test</name>
+		<tag-class>cn.com.tag.TagTest</tag-class>
+		<body-content>scriptless</body-content>
+		
+		<attribute>
+			<description>test</description>
+			<name>list</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<description>自定义forEach</description>
+		<name>forEach</name>
+		<tag-class>cn.com.tag.ForEach</tag-class>
+		<body-content>scriptless</body-content>
+		
+		<attribute>
+			<description>items</description>
+			<name>items</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>var</description>
+			<name>var</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>Work</description>
+		<name>Date</name>
+		<tag-class>cn.com.tag.Work_01</tag-class>
+		<body-content>empty</body-content>
+	</tag>
+	
+	<tag>
+		<description>maxValue</description>
+		<name>maxValue</name>
+		<tag-class>cn.com.tag.Work_02</tag-class>
+		<body-content>empty</body-content>
+		
+		<attribute>
+			<description>num1</description>
+			<name>num1</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>num2</description>
+			<name>num2</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<description>circle</description>
+		<name>circle</name>
+		<tag-class>cn.com.tag.Work_03</tag-class>
+		<body-content>empty</body-content>
+		
+		<attribute>
+			<description>begin</description>
+			<name>begin</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>end</description>
+			<name>end</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<description>step</description>
+			<name>step</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<description>readFile</description>
+		<name>readFile</name>
+		<tag-class>cn.com.tag.Work_04</tag-class>
+		<body-content>empty</body-content>
+		
+		<attribute>
+			<description>src</description>
+			<name>src</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<description>toUpperCase</description>
+		<name>toUpperCase</name>
+		<tag-class>cn.com.tag.Work_05</tag-class>
+		<body-content>scriptless</body-content>
+	</tag>
+</taglib>

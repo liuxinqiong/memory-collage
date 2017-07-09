@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<display-name></display-name>
+	<welcome-file-list>
+		<welcome-file>productServlet</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>userServlet</servlet-name>
+		<servlet-class>cn.com.action.UserServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>productServlet</servlet-name>
+		<servlet-class>cn.com.action.ProductServlet</servlet-class>
+		<init-param>
+			<param-name>test</param-name>
+			<param-value>haha</param-value>
+		</init-param>
+	</servlet>
+
+	<context-param>
+		<param-name>contextTest</param-name>
+		<param-value>context</param-value>
+	</context-param>
+
+
+	<servlet-mapping>
+		<servlet-name>userServlet</servlet-name>
+		<url-pattern>/userServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>productServlet</servlet-name>
+		<url-pattern>/productServlet</url-pattern>
+	</servlet-mapping>
+
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>cn.com.filter.EncodingFilter</filter-class>
+		<init-param>
+			<param-name>filterTest</param-name>
+			<param-value>filter</param-value>
+		</init-param>
+	</filter>
+
+	<filter>
+		<filter-name>loginValidate</filter-name>
+		<filter-class>cn.com.filter.LoginValidate</filter-class>
+		<init-param>
+			<param-name>ValidatefilePath</param-name>
+			<param-value>/WEB-INF/validate.xml</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>loginValidate</filter-name>
+		<url-pattern>*</url-pattern>
+	</filter-mapping>
+
+	<listener>
+		<listener-class>cn.com.listener.MyHttpSessionAttributeListener</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>cn.com.listener.MyHttpSessionListener</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>cn.com.listener.MyServletContextListener</listener-class>
+	</listener>
+
+	<resource-ref>
+		<res-ref-name>jdbc/EasyWeb</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+</web-app>
